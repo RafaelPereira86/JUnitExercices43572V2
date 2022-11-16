@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 
 public class NumberTest {
     private Number number;
@@ -24,16 +25,32 @@ public class NumberTest {
         assertFalse(number.isPrime(arg));
     }
 
+    @DisplayName("Teste de numeros primos")
+    @ParameterizedTest
+    @ValueSource(ints = {32, 64, 2, 20, 30, 26})
+    public void primTest(int arg) {
+        assertTrue(number.isPrime(arg));
+    }
+    @DisplayName("Teste de numeros primos")
+    @ParameterizedTest
+    @ValueSource(ints = { 23, 46, 115, 184, 207, 230})
+    public void primoTest(int arg) {
+        assertTrue(number.isPrime(arg));
+    }
+    @DisplayName("Teste de numeros pares")
+    @ParameterizedTest
+    @ValueSource(ints = {3, 23, 311, 487, 653, 947})
+    public void parTest(int arg) {assertTrue(number.isEven(arg));
+    }
     @DisplayName("Teste de numeros pares")
     @ParameterizedTest
     @ValueSource(ints = {32, 64, 2, 20, 30, 26})
-    public void parTest(int arg) {
-        assertFalse(number.isEven(arg));
+    public void pareTest(int arg) {assertTrue(number.isEven(arg));
     }
-    @DisplayName("Teste de numeros divisivel")
+    @DisplayName("Teste de numeros primos")
     @ParameterizedTest
     @ValueSource(ints = { 23, 46, 115, 184, 207, 230})
-    public void divTest(int arg) {
-        assertFalse(number.isMultiple(arg));
+    public void paresTest(int arg) {
+        assertTrue(number.isEven(arg));
     }
 }

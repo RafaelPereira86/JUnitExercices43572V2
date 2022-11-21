@@ -22,35 +22,20 @@ public class NumberTest {
     @ParameterizedTest
     @ValueSource(ints = {3, 23, 311, 487, 653, 947})
     public void priTest(int arg) {
-        assertFalse(number.isPrime(arg));
+        assertTrue(number.isPrime(arg));
     }
 
-    @DisplayName("Teste de numeros primos")
-    @ParameterizedTest
-    @ValueSource(ints = {32, 64, 2, 20, 30, 26})
-    public void primTest(int arg) {
-        assertTrue(number.isPrime(arg));
-    }
-    @DisplayName("Teste de numeros primos")
-    @ParameterizedTest
-    @ValueSource(ints = { 23, 46, 115, 184, 207, 230})
-    public void primoTest(int arg) {
-        assertTrue(number.isPrime(arg));
-    }
+
     @DisplayName("Teste de numeros pares")
     @ParameterizedTest
-    @ValueSource(ints = {3, 23, 311, 487, 653, 947})
+    @ValueSource(ints = {32, 64, 2, 20, 30, 26})
     public void parTest(int arg) {assertTrue(number.isEven(arg));
     }
-    @DisplayName("Teste de numeros pares")
-    @ParameterizedTest
-    @ValueSource(ints = {32, 64, 2, 20, 30, 26})
-    public void pareTest(int arg) {assertTrue(number.isEven(arg));
-    }
-    @DisplayName("Teste de numeros primos")
+    @DisplayName("Teste de numeros multiplos")
     @ParameterizedTest
     @ValueSource(ints = { 23, 46, 115, 184, 207, 230})
-    public void paresTest(int arg) {
-        assertTrue(number.isEven(arg));
+    public void isMultiple(int arg){
+        boolean isMultiple = number.isMultiple(arg,4);
+        assertTrue(isMultiple);
     }
 }

@@ -4,6 +4,10 @@ public class Nota {
     int numAluno;
     double nota;
 
+    public Nota(int numAluno, double nota) {
+        this.numAluno = numAluno;
+        this.nota = nota;
+    }
 
     public int getNumAluno() {
         return numAluno;
@@ -19,5 +23,12 @@ public class Nota {
 
     public void setNota(double nota) {
         this.nota = nota;
+    }
+    @Override
+    public String toString() {
+        return "Nota{" +
+                "numALuno=" + numAluno +
+                ", nota=" + nota +
+                '}';
     }
 }
